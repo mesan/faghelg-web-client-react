@@ -9,7 +9,7 @@ import { Router, Route, Link, browserHistory } from 'react-router'
 ReactDOM.render((
     <Router history={browserHistory}>
         <Route path="/" component={App}>
-            <Route path="/program" component={Program}/>
+            <Route path="program" component={Program}/>
         </Route>
     </Router>
 ), document.getElementById('root'))
