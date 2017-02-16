@@ -10,8 +10,13 @@ class App extends Component {
 
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Faghelg webapp</h2>
-            <Link to={"/program"} className={"lenker"}>Program</Link>
+          <h1>Faghelg webapp</h1>
+          <ul>
+            <li><Link to={"/program"} className={"lenker"}>Program</Link></li>
+            <li><Link to={"/persons"} className={"lenker"}>Personer</Link></li>
+          </ul>
+
+
         </div>
 
           {this.props.children}

@@ -1,0 +1,28 @@
+.profileImg {
+  height:100px;
+  width:100px;
+  float:left;
+}
+
+.personContainer{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #103257;
+  border-radius: 10px;
+  width: 270px;
+  height:auto;
+  padding:1%;
+  float:left;
+}
+
+.personName{
+  font-size:.7em;
+  float:left;
+  margin:0 0 0 5px;
+  width:100px;
+  color: #3D3E4E;
+}
+
+.left {
+
+}
