@@ -40,13 +40,13 @@ class PersonList extends Component {
       .then(persons =>
         this.setState({persons})
       )
-      .catch(err => console.error('Failed to get news. Totally fake.', err));
+      .catch(err => console.error('Failed to fetch persons.', err));
   }
 
     render() {
         return (
             <div className="persons">
-                <h1>Ansatte</h1>
+                <h1>Personer</h1>
                 <div className="container">
                 <div className="row">
                   <div className="col-md-8">
