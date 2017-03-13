@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Program from './Program'
+import Program from './program/Program'
 import Persons from './persons/Persons'
 import './index.css';
 // using an ES6 transpiler, like babel
