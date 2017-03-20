@@ -1,24 +1,50 @@
-.eventImageUrl {
-    height:100px;
-    width:100px;
-    float:left;
-}
-
 .eventContainer{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #103257;
-    border-radius: 10px;
-    width: 270px;
-    height:auto;
-    padding:1%;
+    margin-top: 0.2em;
+    margin-bottom: 0.1em;
+    border-bottom: 0.01em solid #103258;
+    width: 450px;
+    height: auto;
+    padding:.7%;
     float:left;
+    display: flex;
+
 }
 
-.title{
-    font-size:.7em;
+.button{
+    font-size: 10em;
+    color: white;
+    background-color: #103258;
+}
+
+.eventImageUrl{
     float:left;
-    margin:0 0 0 5px;
-    width:100px;
-    color: #3D3E4E;
+    width: 100%;
+    align-items: stretch;
+}
+
+.eventImageContainer{
+    width: 50%;
+}
+
+.eventTitleContainer{
+    width: 100%;
+    font-weight: Bold;
+    margin-bottom: 0.7em;
+}
+
+.eventTimeContainer{
+    width: 100%;
+    margin-bottom: 0.7em;
+}
+
+.eventContentContainer{
+    width: 50%;
+    padding: 1%;
+    float: left;
+
+}
+
+.program{
+    width: 450px;
+    color: #103258;
 }
