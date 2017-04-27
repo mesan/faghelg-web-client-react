@@ -1,32 +1,38 @@
 .persons {
   color: #3D3E4E;
+  background-color: #CEDFE0;
+  overflow: hidden;
+}
+
+.personContainer:first-of-type {
+  border-top: solid 1px #103258;
+}
+
+.personContainer{
+  margin-top: 10px;
+  border-bottom: solid 1px #103258;
+  width: 100%;
+  box-sizing: border-box;
+  height:auto;
+  padding: 2%;
+  float:left;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }
 
 .profileImg {
   height:100px;
   width:100px;
-  float:left;
+  border: solid 2px #98bdc0;
+  border-radius: 50%;
 }
 
-.personContainer{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #103257;
-  border-radius: 10px;
-  width: 270px;
-  height:auto;
-  padding:1%;
-  float:left;
-}
-
-.personName{
-  font-size:.7em;
-  float:left;
+.personName {
+  font-size:1.5em;
   margin:0 0 0 5px;
-  width:100px;
   color: #3D3E4E;
-}
-
-.left {
-
+  text-align: left;
+  padding: 0.5em;
 }

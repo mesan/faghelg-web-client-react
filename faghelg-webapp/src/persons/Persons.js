@@ -4,11 +4,8 @@ import './persons.css';
 const PersonFullName = props =>
   <div className="personName">{props.children}</div>
 
-const PersonShortName = props =>
-  <div>{props.children}</div>
-
 const ImageUrl = props =>
-  <div><img className="profileImg" src={props.children} /></div>
+  <img className="profileImg" src={props.children} />
 
 const Person = ({
   fullName,
@@ -52,13 +49,13 @@ class PersonList extends Component {
     render() {
         return (
             <div className="persons">
-                <h1>Personer</h1>
+                <h1 className="pageHeader">Personer</h1>
                 <div className="container">
-                <div className="row">
-                  <div className="col-md-8">
-                      <Persons persons={this.state.persons} />
+                  <div className="row">
+                    <div>
+                        <Persons persons={this.state.persons} />
+                    </div>
                   </div>
-                </div>
               </div>
           </div>
         );
