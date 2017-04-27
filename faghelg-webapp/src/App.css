@@ -3,15 +3,21 @@
 }
 
 .App-logo {
-  height: 80px;
+  width: 22rem;
+}
+
+h1 {
+    text-align: center;
 }
 
 .App-header {
-  background-color: #103258;
-  height: 170px;
-  width: 412px;
-  padding: 20px;
+  background-color: #395B74;
+  height: auto;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   color: white;
+  align-content: center;
 }
 
 .App-intro {
@@ -24,19 +30,22 @@
 }
 
 .lenker {
-  font-size: 1em;
+  font-size: 1rem;
   color: #FFFFFF;
   text-decoration: none;
+    text-align: center;
 }
 
 ul {
-    text-align: left;
+    text-align: center;
     list-style: none;
+    padding: 0px;
+    margin: 0px;
 }
 
 ul li {
     display: inline-block;
-    padding-left: 10px;
+    padding-left: 1.2rem;
 }
 
 ul li:last-child{

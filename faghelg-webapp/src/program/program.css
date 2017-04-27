@@ -1,50 +1,92 @@
+
 .eventContainer{
-    margin-top: 0.2em;
-    margin-bottom: 0.1em;
-    border-bottom: 0.01em solid #103258;
-    width: 450px;
+    border-bottom: 0.01em solid #395B74;
+    width: 100%;
+    max-width: 100%;
     height: auto;
-    padding:.7%;
     float:left;
     display: flex;
-
-}
-
-.button{
-    font-size: 10em;
-    color: white;
-    background-color: #103258;
+    color: #395B74;
 }
 
 .eventImageUrl{
-    float:left;
+    float: left;
+    max-width: 100%;
+    max-height: 20em;
+    height: auto;
+}
+
+.dayFilterButtons{
     width: 100%;
-    align-items: stretch;
+}
+
+.time{
+    width: 100%;
+}
+
+.dayFilterButton{
+    width: auto;
+    text-transform: capitalize;
+    font-weight: bolder;
+    font-size: medium;
+    background-color: #395B74;
+    border-bottom-color: #395B74;
+    color: white;
+    margin-bottom: 0.4em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    margin-top: 0.4em;
 }
 
 .eventImageContainer{
-    width: 50%;
+    width: 40%;
 }
 
 .eventTitleContainer{
     width: 100%;
     font-weight: Bold;
-    margin-bottom: 0.7em;
+    margin-bottom: 0.3em;
+    text-align: left;
 }
+
+.title{
+    padding-top: 0.3em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+}
+
+
 
 .eventTimeContainer{
     width: 100%;
+    font-size: 0.8em;
     margin-bottom: 0.7em;
+    text-align: left;
+}
+
+.eventTimeContainer ul{
+    text-align: left;
+    margin-left: 3em;
+}
+
+
+.eventTimeContainer ul li {
+    width: auto;
+    min-width: 2em;
+    text-align: left;
 }
 
 .eventContentContainer{
-    width: 50%;
-    padding: 1%;
+    width: 60%;
     float: left;
+}
 
+.hostNames {
+    font-size: small;
+    text-align: left;
+    padding-left: 1em;
 }
 
 .program{
-    width: 450px;
-    color: #103258;
+    color: #395B74;
 }

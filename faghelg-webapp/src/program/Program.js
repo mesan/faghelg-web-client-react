@@ -3,19 +3,19 @@ import "./program.css";
 import moment from "moment";
 
 const StartTime = props =>
-    <div className="startTime">{props.start}</div>;
+    <div className="time"><ul><li>Fra:</li><li>{props.start}</li></ul></div>;
 
 const EndTime = props =>
-    <div className="endTime">{props.end}</div>;
+    <div className="time"><ul><li>Til:</li><li>{props.end}</li></ul></div>;
 
 const Title = props =>
     <div className="title">{props.title}</div>;
 
 const HostNames = props =>
-    <div className="hostNames">{props.hostNames}</div>;
+    <div className="hostNames">Fordragsholdere: {props.hostNames}</div>;
 
 const EventImageUrl = props =>
-    <div><img className="eventImageUrl" src={props.eventImageUrl} /></div>;
+    <div><img className="eventImageUrl" alt={props.eventImageUrl} src={props.eventImageUrl} /></div>;
 
 const Event = ({
     start,
@@ -33,12 +33,8 @@ const Event = ({
                 <Title title={title} />
             </div>
             <div className="eventTimeContainer">
-                <div className="startTimeContainer">
-                    <StartTime start={moment.unix(start).format('LLL')}/>
-                </div>
-                <div className="endTimeContainer">
-                    <EndTime end={moment.unix(end).format('LLL')}/>
-                </div>
+                <StartTime start={moment.unix(start).format('dddd [kl:] HH:mm')}/>
+                <EndTime end={moment.unix(end).format('dddd [kl:] HH:mm')}/>
             </div>
             <div className="eventHostnameContainer">
                 <HostNames hostNames={hostNames} />
@@ -46,45 +42,87 @@ const Event = ({
         </div>
     </div>;
 
-
-
 const Events = ({events}) =>
     <div>
         {events.map((event, index) => <Event key={index} {...event} />)}
     </div>;
 
+
 class Program extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            events : []
+            events : {},
+            dates: [],
+            activeDate: 'torsdag 04',
+            neverCalled: "true",
+            distinctDays: [],
         };
-
     }
 
+
     componentDidMount() {
-        console.log(fetch('http://faghelg.herokuapp.com/program')
+        fetch('http://faghelg.herokuapp.com/program')
             .then(response => response.json())
-            //.then(response => console.log(response.events))
-            .then(response => this.setState({events:response.events}))
-            .catch(err => console.error('Failed to get program at this time.', err)))
+            .then(response => this.setState({
+                events: this.mapEventsToDistinctDay(response.events),
+                distinctDays: this.getDistinctDays(response.events)}
+                ))
+            .catch(err => console.error('Failed to get program at this time.', err))
+    }
+
+    getDistinctDays(events) {
+        let distinctDays = [];
+
+        events.map((event => {
+            if (distinctDays.indexOf(moment.unix(event.start).format('dddd DD')) === -1) {
+                distinctDays.push(moment.unix(event.start).format('dddd DD'));
+            }
+            return event;
+        }));
+
+        return distinctDays;
+    }
+
+
+    mapEventsToDistinctDay(events) {
+        let eventsByDay = {};
+
+        events.map((event) => {
+            let tmpDay = eventsByDay[moment.unix(event.start).format('dddd DD')];
+            if (tmpDay === undefined) {
+                tmpDay = [];
+            }
+            tmpDay.push(event);
+
+            eventsByDay[moment.unix(event.start).format('dddd DD')] = tmpDay;
+            return event;
+        });
+
+        return eventsByDay;
+    }
+
+
+
+    filterEventsForEachDay(day) {
+        this.setState({activeDate: day});
     }
 
     render() {
         moment.locale("nb");
-
         return (
             <div className="program">
-                <h1>Program</h1>
-
-                <button>3. november</button>
-                <button>4. november</button>
-                <button>5. november</button>
+                <div className="dayFilterButtons">
+                    {this.state.distinctDays.map((day) =>
+                        <button
+                            key={day}
+                            className="dayFilterButton"
+                            onClick={() => this.filterEventsForEachDay(day)}>{day}
+                        </button>)}
+                </div>
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-8">
-                            <Events events={this.state.events} />
-                        </div>
+                        <Events events={this.state.events[this.state.activeDate] ? this.state.events[this.state.activeDate] : []} />
                     </div>
                 </div>
             </div>
