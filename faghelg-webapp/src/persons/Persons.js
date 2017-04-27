@@ -22,7 +22,13 @@ const Person = ({
 
 const Persons = ({persons}) =>
   <div>
-    {persons.map((person, index) => <Person key={index} {...person} />)}
+    {persons
+      .sort(function(a,b) {
+        if(a.fullName < b.fullName) return -1;
+        if(a.fullName > b.fullName) return 1;
+        return 0;
+      })
+      .map((person, index) => <Person key={index} {...person} />)}
   </div>;
 
 
