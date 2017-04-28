@@ -112,6 +112,7 @@ class Program extends Component {
         moment.locale("nb");
         return (
             <div className="program">
+                <h1 className="pageHeader">Program</h1>
                 <div className="dayFilterButtons">
                     {this.state.distinctDays.map((day) =>
                         <button

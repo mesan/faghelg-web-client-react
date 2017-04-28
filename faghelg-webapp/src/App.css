@@ -1,9 +1,14 @@
+body {
+    background-color: #CEDFE0;
+    color: #3D3E4E;
+}
 .App {
   text-align: center;
+    color: #3D3E4E;
 }
 
 .App-logo {
-  width: 22rem;
+  width: 20rem;
 }
 
 h1 {

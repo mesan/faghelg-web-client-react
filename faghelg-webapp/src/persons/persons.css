@@ -1,12 +1,7 @@
 .persons {
   color: #3D3E4E;
-  background-color: #CEDFE0;
-  overflow: hidden;
 }
 
-.personContainer:first-of-type {
-  border-top: solid 1px #103258;
-}
 
 .personContainer{
   margin-top: 10px;
@@ -32,7 +27,6 @@
 .personName {
   font-size:1.5em;
   margin:0 0 0 5px;
-  color: #3D3E4E;
   text-align: left;
   padding: 0.5em;
 }
