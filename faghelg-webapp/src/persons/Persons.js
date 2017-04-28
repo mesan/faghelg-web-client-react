@@ -54,7 +54,7 @@ class PersonList extends Component {
       if (this.state.filterString === "") {
           return true;
       }
-      if (person.fullName.includes(this.state.filterString)) {
+      if (person.fullName.toLowerCase().includes(this.state.filterString.toLowerCase())) {
           return true;
       }
       return false;
