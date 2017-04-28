@@ -69,7 +69,7 @@ class PersonList extends Component {
             <div className="persons">
                 <h1 className="pageHeader">Personer</h1>
                 <div className="searchContainer" >
-                    <input type="text" value={this.state.filterString} placeholder="Søk" onChange={this.onChange}/>
+                    <input type="text" value={this.state.filterString} onChange={this.onChange}/>
                 </div>
                 <div className="container">
                   <div className="row">
