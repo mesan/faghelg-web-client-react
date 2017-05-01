@@ -18,7 +18,7 @@ const Person = ({
   </div>;
 
 const Persons = ({persons}) =>
-  <div>
+  <div className="personsList">
     {persons
       .sort(function(a,b) {
         if(a.fullName < b.fullName) return -1;

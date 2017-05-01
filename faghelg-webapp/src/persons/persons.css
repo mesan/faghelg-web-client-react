@@ -2,7 +2,6 @@
   color: #3D3E4E;
 }
 
-
 .personContainer{
   margin-top: 10px;
   border-bottom: solid 1px #103258;
@@ -10,11 +9,35 @@
   box-sizing: border-box;
   height:auto;
   padding: 2%;
-  float:left;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: left;
+}
+
+.personsList {
+  border-top: solid 1px #103258;
+}
+
+@media screen and (min-width:721px) {
+  .personContainer {
+    float:left;
+    width: 50%;
+    border-left: solid 1px #103258;
+    margin-top: 0;
+    height: 10em;
+  }
+
+  .personContainer:last-of-type {
+    /* The following is kind of hacky and unfortunately doesn't work perfectly */
+    border-right: solid 1px #103258;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .personContainer {
+    width: 33.33%;
+  }
 }
 
 .profileImg {
