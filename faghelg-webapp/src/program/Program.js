@@ -8,6 +8,9 @@ const StartTime = props =>
 const EndTime = props =>
     <div className="time"><ul><li>Til:</li><li>{props.end}</li></ul></div>;
 
+const Duration = props =>
+    <div className="time"><ul><li>Varighet:</li><li>ca {props.duration.humanize(false)}</li></ul></div>;
+
 const Title = props =>
     <div className="title">{props.title}</div>;
 
@@ -35,6 +38,7 @@ const Event = ({
             <div className="eventTimeContainer">
                 <StartTime start={moment.unix(start).format('dddd [kl:] HH:mm')}/>
                 <EndTime end={moment.unix(end).format('dddd [kl:] HH:mm')}/>
+                <Duration duration={moment.duration(end-start,"seconds")}/>
             </div>
             <div className="eventHostnameContainer">
                 <HostNames hostNames={hostNames} />
