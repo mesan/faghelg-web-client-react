@@ -1,31 +1,35 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
+import testImg from '../../testpic.png';
 import './chat.css';
 import config from '../config';
 import Input from './Input';
 
 
 const MessageFrom = props =>
-    <div>{props.messageFrom}</div>
+    <img src={props.picture} />
 
 const MessageContent = props =>
-    <div>{props.messageContent}</div>
+    <div className="message-text">{props.messageContent}</div>
 
 const Message = ({
     messageContent,
     messageFrom,
-    isOwnMessage
+    talkBubbleClass,
+    profileImgClass
 }) =>
-    <div className="talk-bubble tri-right left-in">
-        <div className="talktext">
+    <div className="chat-message">
+        <div className={`talk-bubble-${talkBubbleClass ? talkBubbleClass : 'right'}`}>
           <MessageContent messageContent={messageContent}/>
-          <MessageFrom messageFrom={messageFrom} />
+        </div>
+        <div className={`chat-profile-img ${profileImgClass}`}>
+            <MessageFrom picture={testImg}/>
         </div>
     </div>
 
 
 const Messages = ({messages}) =>
-    <div>
+    <div className="messages">
         {messages.map((message, index) => <Message key={index} {...message} />)}
     </div>;
 
@@ -55,7 +59,8 @@ class Chat extends Component {
     // Emit the message to the server
     this.socket.emit('client:message', messageObject);
 
-    messageObject.isOwnMessage = true;
+    messageObject.talkBubbleClass = 'left';
+    messageObject.profileImgClass = 'chat-profile-img-own';
     this.addMessage(messageObject);
   }
 
@@ -74,14 +79,10 @@ class Chat extends Component {
             <div className="chat">
                 <h1>Chat</h1>
                 <div className="container">
-                    <div className="row">
-                        <div className="col-md-8">
                             <Messages messages={this.state.messages} />
                             <Input onSend={this.sendHandler} />
                         </div>
                     </div>
-                </div>
-            </div>
         );
     }
 

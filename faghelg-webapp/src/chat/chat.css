@@ -1,73 +1,84 @@
 .input {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-.chat-box {
-  position: relative;
-  padding: 15px;
-  margin: 1em 0 3em;
-  color: #000;
-  background: #f3961c;
-  border-radius: 10px;
-  background: linear-gradient(top, #f9d835, #f3961c);
+.chat-message {
+    width: 90%;
+    height: 100px;
+    margin-bottom: 1em;
 }
 
-/* creates triangle */
-.chat-box:after {
-  content: "";
-  display: block; /* reduce the damage in FF3.0 */
-  position: absolute;
-  bottom: -15px;
-  left: 50px;
-  width: 0;
-  border-width: 15px 15px 0;
-  border-style: solid;
-  border-color: #f3961c transparent;
+.messages {
+    margin-bottom: 1em;
+    height: 100vh;
 }
 
-.talk-bubble {
-	margin: 40px;
-  display: inline-block;
-  position: relative;
-	width: 200px;
-	height: auto;
-	background-color: lightyellow;
+.talk-bubble-left {
+    width: 60%;
+    height: 90px;
+    position: relative;
+    float: left;
+    background: #73c6cd;
+    margin-left: 2em;
 }
 
-.tri-right.border.left-in:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: -40px;
-	right: auto;
-  top: 30px;
-	bottom: auto;
-	border: 20px solid;
-	border-color: #666 #666 transparent transparent;
-}
-.tri-right.left-in:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: -20px;
-	right: auto;
-  top: 38px;
-	bottom: auto;
-	border: 12px solid;
-	border-color: lightyellow lightyellow transparent transparent;
+.talk-bubble-right {
+    width: 60%;
+    height: 90px;
+    position: relative;
+    float: right;
+    background: #73c6cd;
+    margin-right: 2em;
+
 }
 
-.talktext{
-  padding: 1em;
-  text-align: left;
-  line-height: 1.5em;
+.message-text {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+
 }
-.talktext p{
-  /* remove webkit p margins */
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0em;
+
+
+.talk-bubble-left:after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-left-color: #73c6cd;
+    border-width: 20px;
+    margin-top: -20px;
+}
+
+.talk-bubble-right:after {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right-color: #73c6cd;
+    border-width: 20px;
+    margin-top: -20px;
+}
+
+.chat-profile-img img{
+    border-radius: 50px;
+    height:80px;
+    width: 80px;
+    margin-left: 1em;
+    float: right;
+}
+
+.chat-profile-img-own img {
+    float: left;
 }
