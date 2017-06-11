@@ -22,7 +22,7 @@ const Message = ({
         <div className={`talk-bubble-${talkBubbleClass ? talkBubbleClass : 'right'}`}>
           <MessageContent messageContent={messageContent}/>
         </div>
-        <div className={`chat-profile-img ${profileImgClass}`}>
+        <div className={`chat-profile-img ${profileImgClass ? profileImgClass : 'chat-profile-img-left'}`}>
             <MessageFrom picture={testImg}/>
         </div>
     </div>
@@ -60,7 +60,7 @@ class Chat extends Component {
     this.socket.emit('client:message', messageObject);
 
     messageObject.talkBubbleClass = 'left';
-    messageObject.profileImgClass = 'chat-profile-img-own';
+    messageObject.profileImgClass = 'chat-profile-img-right';
     this.addMessage(messageObject);
   }
 
