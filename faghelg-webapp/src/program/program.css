@@ -1,24 +1,105 @@
-.eventImageUrl {
-    height:100px;
-    width:100px;
-    float:left;
-}
 
 .eventContainer{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #103257;
-    border-radius: 10px;
-    width: 270px;
-    height:auto;
-    padding:1%;
+    box-sizing: border-box;
+    border-bottom: 0.01em solid #395B74;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     float:left;
+    display: flex;
+    color: #3D3E4E;
+}
+
+.eventContainer:first-of-type {
+    border-top: solid 1px #103258;
+}
+
+.eventImageUrl{
+    float: left;
+    max-width: 100%;
+    max-height: 20em;
+    height: auto;
+}
+
+.dayFilterButtons{
+    width: 100%;
+}
+
+.time{
+    width: 100%;
+}
+
+.pageHeader{
+    border-bottom: 0.01em solid #395B74;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 0;
+}
+
+.dayFilterButton{
+    width: auto;
+    text-transform: capitalize;
+    /*font-weight: bolder;*/
+    font-size: 1rem;
+    background-color: #395B74;
+    border-bottom-color: #395B74;
+    color: white;
+    margin-bottom: 0.4em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    margin-top: 0.4em;
+}
+
+.eventImageContainer{
+    width: 40%;
+}
+
+.eventTitleContainer{
+    width: 100%;
+    font-weight: Bold;
+    margin-bottom: 0.3em;
+    text-align: left;
 }
 
 .title{
-    font-size:.7em;
-    float:left;
-    margin:0 0 0 5px;
-    width:100px;
+    padding-top: 0.3em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+}
+
+
+
+.eventTimeContainer{
+    width: 100%;
+    font-size: 0.8em;
+    margin-bottom: 0.7em;
+    text-align: left;
+}
+
+.eventTimeContainer ul{
+    text-align: left;
+    margin-left: 3em;
+}
+
+
+.eventTimeContainer ul li {
+    width: auto;
+    min-width: 2em;
+    text-align: left;
+}
+
+.eventContentContainer{
+    width: 60%;
+    float: left;
+}
+
+.hostNames {
+    font-size: small;
+    text-align: left;
+    padding-left: 1em;
+}
+
+.program{
     color: #3D3E4E;
 }

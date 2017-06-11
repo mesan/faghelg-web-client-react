@@ -2,31 +2,66 @@
   color: #3D3E4E;
 }
 
+.personContainer{
+  margin-top: 10px;
+  border-bottom: solid 1px #103258;
+  width: 100%;
+  box-sizing: border-box;
+  height:auto;
+  padding: 2%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.personsList {
+  border-top: solid 1px #103258;
+}
+
+@media screen and (min-width:721px) {
+  .personContainer {
+    float:left;
+    width: 50%;
+    border-left: solid 1px #103258;
+    margin-top: 0;
+    height: 10em;
+  }
+
+  .personContainer:last-of-type {
+    /* The following is kind of hacky and unfortunately doesn't work perfectly */
+    border-right: solid 1px #103258;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .personContainer {
+    width: 33.33%;
+  }
+}
+
 .profileImg {
   height:100px;
   width:100px;
-  float:left;
+  border: solid 2px #98bdc0;
+  border-radius: 50%;
 }
 
-.personContainer{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #103257;
-  border-radius: 10px;
-  width: 270px;
-  height:auto;
-  padding:1%;
-  float:left;
+.searchContainer{
+  padding: 1em;
+  box-sizing: border-box;
 }
 
-.personName{
-  font-size:.7em;
-  float:left;
+.searchContainer input{
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+  font-size:1.5em;
+}
+
+.personName {
+  font-size:1.5em;
   margin:0 0 0 5px;
-  width:100px;
-  color: #3D3E4E;
-}
-
-.left {
-
+  text-align: left;
+  padding: 0.5em;
 }
